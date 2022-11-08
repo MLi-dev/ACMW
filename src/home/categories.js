@@ -19,4 +19,9 @@ export const categories = [
         name: 'Javascript', 
         description: 'Javascript class here',
     },
+    {
+        id: 5, 
+        name: 'Analytics', 
+        description: 'View your performance in other classes here',
+    },
     ]

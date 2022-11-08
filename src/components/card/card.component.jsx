@@ -60,6 +60,20 @@ const Card = ({ monster }) => {
           </div>
         );
         }
+        else if(name === 'Analytics')  {
+          return (
+            <div className="card-container">
+              <Link to={`/Analytics`}>
+                <img
+                  alt={`monster ${name}`}
+                  src={`https://robohash.org/${id}?set=set2&size=180x180`}
+                />
+                <h2>{name}</h2>
+              </Link>
+              <p>{description}</p>
+            </div>
+          );
+          }
   };
   
   export default Card;

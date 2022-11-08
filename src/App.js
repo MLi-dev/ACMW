@@ -10,6 +10,7 @@ const App = () => {
       <Route path='/Cpp' element={<Home/>} />
       <Route path='/Javascript' element={<Home/>} />
       <Route path='/Python' element={<Home/>} />
+      <Route path='/Analytics' element={<Home/>} />
       
 
     </Routes>
