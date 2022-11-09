@@ -1,26 +1,33 @@
+import {useState} from "react";
 import './courses.styles.css';
-import {Link} from "react-router-dom"; 
-
-const Courses = ({ name }) => {
+import Output from './output.component';
+const Courses = ({id}) => {
+    const [courseId, setCourseId] = useState(1);
+    const onSubmitHandler = (id) => {
+        setCourseId(id);
+    }
     return (
-        <div>
-        <header>
+    <div>
+    <header>
   <h2>Cities</h2>
-</header>
-
-<section>
+    </header>
+    <section>
   <nav>
     <ul>
-      <li><a href="#">London</a></li>
-      <li><a href="#">Paris</a></li>
-      <li><a href="#">Tokyo</a></li>
+    <div className = "actionButton">
+    <button onClick = {() => onSubmitHandler(1)}><li><a href="#">London</a></li></button>
+    </div>
+    <div className = "actionButton">
+    <button onClick = {()=>onSubmitHandler(2)}><li><a href="#">Paris</a></li></button>
+    </div>
+    <div className = "actionButton">
+    <button onClick = {()=>onSubmitHandler(3)}><li><a href="#">Tokyo</a></li></button>
+    </div>
+
     </ul>
   </nav>
-  
   <article>
-    <h1>London</h1>
-    <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-    <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+   <Output id = {courseId}/>
   </article>
 </section>
 <footer>
