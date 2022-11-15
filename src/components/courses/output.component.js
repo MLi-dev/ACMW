@@ -1,4 +1,3 @@
-import Courses from "./courses.component";
 import "./courses.styles.css";
 import course from "./output.js";
 import Quiz from "../quiz/quiz.component";

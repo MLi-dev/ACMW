@@ -19,16 +19,16 @@ const Courses = ({id}) => {
   <nav>
     <ul>
     <div className = "actionButton">
-    <button  onClick = {() => onSubmitHandler(1, 'Quiz', 'Linux')}><li><a href="#">Linux</a></li></button>   
+    <button  onClick = {() => onSubmitHandler(1, 'Quiz', 'Linux')}><li>Linux</li></button>   
     </div>
     <div className = "actionButton">
-    <button onClick = {()=>onSubmitHandler(2, 'Youtube', 'DevOps')}><li><a href="#">DevOps</a></li></button>
+    <button onClick = {()=>onSubmitHandler(2, 'Youtube', 'DevOps')}><li>DevOps</li></button>
     </div>
     <div className = "actionButton">
-    <button onClick = {()=>onSubmitHandler(3, 'Youtube', 'Networking')}><li><a href="#">Networking</a></li></button>
+    <button onClick = {()=>onSubmitHandler(3, 'Youtube', 'Networking')}><li>Networking</li></button>
     </div>
     <div className = "actionButton">
-    <button onClick = {()=>onSubmitHandler(4, 'Quiz', 'Programming')}><li><a href="#">Programming</a></li></button>
+    <button onClick = {()=>onSubmitHandler(4, 'Quiz', 'Programming')}><li>Programming</li></button>
     </div> 
     </ul>   
   </nav>
