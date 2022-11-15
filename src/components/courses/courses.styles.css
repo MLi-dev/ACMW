@@ -4,11 +4,12 @@ body {
   
   /* Style the header */
   header {
-    background-color: #666;
+    background-color: rgb(116, 14, 156);
     padding: 30px;
     text-align: center;
     font-size: 35px;
     color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
 
 
@@ -27,6 +28,9 @@ body {
     list-style-type: none;
     padding: 0;
   }
+
+
+
   
   article {
     padding: 20px;
@@ -44,7 +48,7 @@ body {
   
   /* Style the footer */
   footer {
-    background-color: #777;
+    background-color: rgb(150, 0, 187);
     padding: 10px;
     text-align: center;
     color: white;
