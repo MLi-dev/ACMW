@@ -2,7 +2,7 @@ import './card.styles.css';
 import {Link} from "react-router-dom"; 
 
 const Card = ({ monster }) => {
-    const { id, name, description, img} = monster;
+    const { name, description, img} = monster;
   
     return (
       <div className="card-container">

@@ -19,7 +19,7 @@ const Courses = ({id}) => {
   <nav>
     <ul>
     <div className = "actionButton">
-    <button  onClick = {() => onSubmitHandler(1, 'Quiz', 'Linux')}><li>Linux</li></button>   
+    <button  onClick = {() => onSubmitHandler(1, 'Quiz', 'Docker')}><li>Linux</li></button>   
     </div>
     <div className = "actionButton">
     <button onClick = {()=>onSubmitHandler(2, 'Youtube', 'DevOps')}><li>DevOps</li></button>
