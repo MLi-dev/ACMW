@@ -4,28 +4,27 @@ import Output from "./output.component";
 import { projectFirestore } from "../../firebase/config";
 import course from "./output";
 import React, {useEffect} from "react"; 
+import {useParams} from 'react-router-dom'; 
 
 const Courses = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [pending, setPending] = useState(false);
 	const [error, setError] = useState(false);
-
+  const {category} = useParams(); 
 	const [courseId, setCourseId] = useState(1);
 	const [type, setType] = useState("");
-  const [category, setCategory] = useState("");
   const [video, setVideo] = useState("");
 	const onSubmitHandler = (id, type, category, video) => {
-    console.log(video); 
 		setCourseId(id);
 		setType(type);
-    setCategory(category);
     setVideo(video);
 	};
 	useEffect(() => {
 		setPending(true);
 		projectFirestore
 			.collection("courses")
-			.get()
+      .where("category", "==", category)
+      .get()
 			.then((snapshot) => {
 				if (snapshot.empty) {
 					setError("No courses to load");

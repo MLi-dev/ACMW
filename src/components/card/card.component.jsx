@@ -6,7 +6,7 @@ const Card = ({ monster }) => {
   
     return (
       <div className="card-container">
-        <Link to={`/Courses`}>
+        <Link to={`/Courses/${name}`}>
           <img 
             alt={`monster ${name}`}
             src={img} 
