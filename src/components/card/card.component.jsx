@@ -7,11 +7,9 @@ const Card = ({ monster }) => {
     return (
       <div className="card-container">
         <Link to={`/Courses`}>
-          <img
+          <img 
             alt={`monster ${name}`}
             src={img} 
-            width = "140"
-            height = "140"
           />
           <h2>{name}</h2>
         </Link>
