@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./courses.styles.css";
 import Output from "./output.component";
 import { projectFirestore } from "../../firebase/config";
-import course from "./output";
 import React, {useEffect} from "react"; 
 import {useParams} from 'react-router-dom'; 
 
@@ -42,7 +41,7 @@ const Courses = ({ id }) => {
 				setError(err.message);
 				setPending(false);
 			});
-	}, [courseId]);
+	}, [courseId, category]);
 
 	return (
 		<div>
@@ -53,7 +52,9 @@ const Courses = ({ id }) => {
 				<nav>
           <ul>
           <h1>Video</h1>
-          {data.map((item) => (
+          {error && <div>No Courses/Video available!</div>}
+          {pending && <div>Loading!</div>}
+          {!pending && data.map((item) => (
             <div key = {item.id} className='actionButton'>
             <button onClick={() => onSubmitHandler(`${item.id}`, "Youtube", `${item.category}`, `https://www.youtube.com/embed/${item.video}`)}>
               <li>{item.category}</li>
