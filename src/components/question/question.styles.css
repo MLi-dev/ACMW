@@ -138,6 +138,12 @@ input[type=radio]:checked ~ .option {
   background: paleturquoise;
 }
 
+input[type=radio]:checked ~ .levelOption {
+  background: rgb(7, 184, 60);
+}
+
+
+
 .correct {
   background: green;
 }

@@ -4,6 +4,7 @@ import { useState } from "react";
 const Question = ({questionNumber, item, onNext, size, score}) => {
   const { question, answers, correct_answer} = item;
   const [selectedOption, setSelectedOption] = useState("");
+  const [isOpen, setIsOpen] = useState(true); 
   const handleOptionChange = (event) => {
     console.log(event.target.value);
     setSelectedOption(event.target.value);
@@ -12,9 +13,12 @@ const Question = ({questionNumber, item, onNext, size, score}) => {
     console.log(correct_answer);
     onNext({num: questionNumber+1, correct: correct_answer === selectedOption});
   };
+  const closeScoreModal = () => {
+      setIsOpen(false);
+  }
   return (
     <main>
-        {questionNumber === 10 && <div class="modal-container" id="score-modal">
+        {questionNumber === 10 && isOpen && <div class="modal-container" id="score-modal">
             <div class="modal-content-container">
                 <h1>Congratulations, Quiz Completed.</h1>
                 <div class="grade-details">
@@ -25,7 +29,7 @@ const Question = ({questionNumber, item, onNext, size, score}) => {
                     <p ><span id="remarks"></span></p>
                 </div>
                 <div class="modal-button-container">
-                    <button onClick="closeScoreModal()">Continue</button>
+                    <button onClick={closeScoreModal}>Continue</button>
                 </div>
             </div>
         </div>}
