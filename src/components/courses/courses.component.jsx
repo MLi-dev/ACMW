@@ -2,28 +2,28 @@ import { useState } from "react";
 import "./courses.styles.css";
 import Output from "./output.component";
 import { projectFirestore } from "../../firebase/config";
-import React, {useEffect} from "react"; 
-import {useParams} from 'react-router-dom'; 
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const Courses = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [pending, setPending] = useState(false);
 	const [error, setError] = useState(false);
-  const {category} = useParams(); 
+	const { category } = useParams();
 	const [courseId, setCourseId] = useState(1);
 	const [type, setType] = useState("");
-  const [video, setVideo] = useState("");
+	const [video, setVideo] = useState("");
 	const onSubmitHandler = (id, type, category, video) => {
 		setCourseId(id);
 		setType(type);
-    setVideo(video);
+		setVideo(video);
 	};
 	useEffect(() => {
 		setPending(true);
 		projectFirestore
 			.collection("courses")
-      .where("category", "==", category)
-      .get()
+			.where("category", "==", category)
+			.get()
 			.then((snapshot) => {
 				if (snapshot.empty) {
 					setError("No courses to load");
@@ -50,60 +50,39 @@ const Courses = ({ id }) => {
 			</header>
 			<section>
 				<nav>
-          <ul>
-          <h1>Video</h1>
-          {error && <div>No Courses/Video available!</div>}
-          {pending && <div>Loading!</div>}
-          {!pending && data.map((item) => (
-            <div key = {item.id} className='actionButton'>
-            <button onClick={() => onSubmitHandler(`${item.id}`, "Youtube", `${item.category}`, `https://www.youtube.com/embed/${item.video}`)}>
-              <li>{item.category}</li>
-            </button>
-          </div>
-          ))}
-          <h1>Quiz</h1>
-						<div className='actionButton'>
-							<button onClick={() => onSubmitHandler(1, "Quiz", "Linux")}>
-								<li>Linux</li>
-							</button>
-						</div>
-						<div className='actionButton'>
-							<button onClick={() => onSubmitHandler(2, "Quiz", "Bash")}>
-								<li>Bash</li>
-							</button>
-						</div>
-						<div className='actionButton'>
-							<button onClick={() => onSubmitHandler(3, "Quiz", "Docker")}>
-								<li>Docker</li>
-							</button>
-						</div>
-						<div className='actionButton'>
-							<button onClick={() => onSubmitHandler(4, "Quiz", "SQL")}>
-								<li>SQL</li>
-							</button>
-						</div>
-						<div className='actionButton'>
-							<button onClick={() => onSubmitHandler(4, "Quiz", "CMS")}>
-								<li>CMS</li>
-							</button>
-						</div>
-						<div className='actionButton'>
-							<button onClick={() => onSubmitHandler(4, "Quiz", "Code")}>
-								<li>Code</li>
-							</button>
-						</div>
-						<div className='actionButton'>
-							<button onClick={() => onSubmitHandler(4, "Quiz", "DevOps")}>
-								<li>DevOps</li>
-							</button>
-						</div>
+					<ul id="courseMenu">
+						{error && <div>No Courses/Video available!</div>}
+						{pending && <div>Loading!</div>}
+						{!pending &&
+							data.map((item) => (
+								<li>
+									<a
+										href
+										key={item.id}
+										onClick={() =>
+											onSubmitHandler(
+												`${item.id}`,
+												"Youtube",
+												`${item.category}`,
+												`https://www.youtube.com/embed/${item.video}`
+											)
+										}
+									>
+										<div>{item.title}</div>
+									</a>
+								</li>
+							))}
+						<li>
+							<a href onClick={() => onSubmitHandler(1, "Quiz", "Linux")}>
+								<div>Quiz</div>
+							</a>
+						</li>
 					</ul>
 				</nav>
 				<article>
-					<Output id={courseId} type={type} category={category} video = {video}/>
+					<Output id={courseId} type={type} category={category} video={video} />
 				</article>
 			</section>
-			<footer></footer>
 		</div>
 	);
 };

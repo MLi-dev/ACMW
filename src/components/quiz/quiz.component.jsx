@@ -40,7 +40,6 @@ const Quiz = ({category}) => {
     return (
         <div>
             <div>
-            <h1>Your Quiz</h1>
             {questionList.map((item) => {
                 questionNumber++;
                 if(current === questionNumber)

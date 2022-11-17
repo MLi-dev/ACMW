@@ -4,7 +4,6 @@ body {
   
   /* Style the header */
   header {
-    background-color: rgb(116, 14, 156);
     padding: 30px;
     text-align: center;
     font-size: 35px;
@@ -12,14 +11,11 @@ body {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
 
-
-  
   /* Create two columns/boxes that floats next to each other */
   nav {
     float: left;
     width: 30%;
     height: 750px; /* only for demonstration, should be removed */
-    background: #ccc;
     padding: 20px;
   }
   
@@ -30,11 +26,10 @@ body {
   }
 
 
-
   article {
     padding: 20px;
     width: 100%;
-    background-color: #f1f1f1;
+    background-color:#95dada;;
     height: 750px; /* only for demonstration, should be removed */
   }
   
@@ -45,13 +40,39 @@ body {
     clear: both;
   }
   
-  /* Style the footer */
-  footer {
-    background-color: rgb(150, 0, 187);
-    padding: 10px;
-    text-align: center;
-    color: white;
-    height: 100px;
+
+
+  #courseMenu {
+    margin:10px 50px 10px 50px;
+    width:400px;
+    font-family: sans-serif;
+  }
+  #courseMenu li {
+    display:block;
+    width:200px;
+    float:left;
+    margin-left:2px;
+    border:1px solid #000;
+  }
+
+  #courseMenu div {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgb(25, 25, 92);
+  }
+  
+  #courseMenu a {
+    display:block;
+    padding:3px;
+    text-decoration:none;
+    background-color:#fff;
+    color:rgb(149, 187, 187);
+    height: 50px;
+  }
+  
+  #courseMenu a:hover {
+    background:rgb(149, 187, 187);
+    color:#fff;
   }
 
   @media (max-width: 600px) {
