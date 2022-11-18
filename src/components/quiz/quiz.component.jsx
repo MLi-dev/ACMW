@@ -1,6 +1,8 @@
 import "./quiz.styles.css";
 import React, { useEffect, useState } from "react";
 import Question from "../question/question.component";
+import axios from 'axios'; 
+
 
 const Quiz = ({ category }) => {
 	let questionNumber = 0;
@@ -16,7 +18,9 @@ const Quiz = ({ category }) => {
     
     const handleComplete = () => {
         setIsOptionOpen(true); 
-        setLevel(""); 
+		setLevel(""); 
+		questionNumber = 0;
+		setCurrent(1);
     }
 
 	const handleLevelChange = (event) => {
@@ -25,22 +29,15 @@ const Quiz = ({ category }) => {
     const closeOptionModal = () => {
         setIsOptionOpen(false);
     }
-
-	useEffect(() => {
+    	useEffect(() => {
 		const course = category;
-		const url = `https://cors-anywhere.herokuapp.com/https://quizapi.io/api/v1/questions?category=${course}&limit=10`;
+		const url = `http://localhost:4000`;
 		const fetchData = async () => {
 			try {
-				const response = await fetch(url, {
+				const response = await axios.get(url, {
 					method: "get",
-					headers: {
-						"Access-Control-Allow-Origin": "*",
-						"Access-Control-Allow-Headers": "*",
-						"Content-Type": "application/json",
-						"X-Api-Key": "GqUHpV0I96SwSw9eEHOll244Azgj8dLWdE2Oti4r",
-					},
 				});
-				const json = await response.json();
+				const json = await response.data;
 				console.log(json);
 				setQuestionList(json);
 			} catch (error) {

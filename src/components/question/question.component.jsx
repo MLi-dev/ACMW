@@ -1,7 +1,7 @@
 import "./question.styles.css";
 import { useState } from "react";
 
-const Question = ({questionNumber, item, onNext, size, score}) => {
+const Question = ({questionNumber, item, onNext, size, score, onComplete}) => {
   const { question, answers, correct_answer} = item;
   const [selectedOption, setSelectedOption] = useState("");
   const [isOpen, setIsOpen] = useState(true); 
@@ -15,6 +15,7 @@ const Question = ({questionNumber, item, onNext, size, score}) => {
   };
   const closeScoreModal = () => {
       setIsOpen(false);
+      onComplete();
   }
   return (
     <main>
@@ -43,15 +44,6 @@ const Question = ({questionNumber, item, onNext, size, score}) => {
                 <h1 id="display-question">{question}</h1>
             </div>
             <div class="game-options-container">
-               {/* <div class="modal-container" id="option-modal">
-                    <div class="modal-content-container">
-                         <h1>Please Pick An Option</h1>
-                         <div class="modal-button-container">
-                            <button onClick="closeOptionModal()">Continue</button>
-                        </div>
-
-                    </div>
-               </div> */}
                 <span>
                     <input type="radio" id="option-one" name="option" className="radio" value="answer_a" checked={selectedOption === 'answer_a'} onChange={handleOptionChange}/>
                     <label for="option-one" 
