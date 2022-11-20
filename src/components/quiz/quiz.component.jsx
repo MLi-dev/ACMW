@@ -31,7 +31,7 @@ const Quiz = ({ category }) => {
     }
     	useEffect(() => {
 		const course = category;
-		const url = `http://localhost:4000`;
+		const url = `https://tranquil-babka-75e0d0.netlify.app/`;
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(url, {
