@@ -46,7 +46,7 @@ const Courses = ({ id }) => {
 	return (
 		<div>
 			<header>
-				<h2>Java Learning Resources</h2>
+				<h2>{category} Learning Resources</h2>
 			</header>
 			<section>
 				<nav>

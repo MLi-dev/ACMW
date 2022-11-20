@@ -31,7 +31,8 @@ const Quiz = ({ category }) => {
     }
     	useEffect(() => {
 		const course = category;
-		const url = `https://tranquil-babka-75e0d0.netlify.app/`;
+		const url = `https://cors-anywhere.herokuapp.com/https://quizapi.io/api/v1/questions?category=${course}&limit=10`;
+		//const url = `http://localhost:5000`;
 		const fetchData = async () => {
 			try {
 				const response = await axios.get(url, {
