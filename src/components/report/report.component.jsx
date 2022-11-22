@@ -60,16 +60,31 @@ const Report = ({ id }) => {
 				<article>
 					{data.length === 0 && <div>No Grade available!</div>}
 					{pending && <div>Loading!</div>}
+					<div class='table w-full ...'>
+					<div class='table-header-group ...'>
+						<div class='table-row'>
+							<div class='table-cell ...'>Level</div>
+							<div class='table-cell ...'>Category</div>
+							<div class='table-cell ...'>Score</div>
+							<div class='table-cell ...'>Date Taken</div>
+						</div>
+					</div>
 					{data.map((item) => {
 						let dateFormat = new Date(item.Time);
-						let quizDate = `${dateFormat.getMonth()}/${dateFormat.getDate()}/${dateFormat.getFullYear()}`;
+						let quizDate = `${dateFormat.getMonth()+1}/${dateFormat.getDate()}/${dateFormat.getFullYear()}`;
 						return (
-							<div>
-								{index++}. Level = {item.Level} Category = {item.Name} Score ={" "}
-								{item.Score} Date Taken ={quizDate}
-							</div>
+						
+								<div class='table-row-group'>
+									<div class='table-row'>
+										<div class='table-cell ...'>{item.Level} </div>
+										<div class='table-cell ...'>{item.Name}</div>
+										<div class='table-cell ...'>{item.Score}</div>
+										<div class='table-cell ...'>{quizDate}</div>
+									</div>
+								</div>
 						);
 					})}
+					</div>
 				</article>
 			</section>
 		</div>
