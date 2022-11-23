@@ -40,6 +40,15 @@ body {
     clear: both;
   }
 
+  .my-custom-scrollbar {
+    position: relative;
+    height: 10px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+
 
   .block {
     display: block; 
@@ -60,6 +69,7 @@ body {
   }
   .table	{
     display: table;
+    border-collapse: collapse;
   }
   .inline-table {
     display: inline-table;
@@ -70,7 +80,7 @@ body {
   .table-cell	{
     display: table-cell;
     color: white;
-    width: 10000px;
+    width: 1000000px;
     font-size: 20px;
   }
   .table-column	{
@@ -87,6 +97,8 @@ body {
     text-align: center;
     background-color:rgb(25, 25, 92);
     color: white;
+    cursor: pointer;
+    
   }
   .table-row-group	{
     display: table-row-group;
@@ -114,10 +126,6 @@ body {
     display: none;
   }
 
-
-
-
-
   #reportMenu {
     margin:10px 50px 10px 50px;
     width:400px;
@@ -144,6 +152,7 @@ body {
     background-color:#fff;
     color:rgb(149, 187, 187);
     height: 50px;
+    cursor: pointer;
   }
   
   #reportMenu a:hover {

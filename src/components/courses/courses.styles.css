@@ -57,7 +57,7 @@ body {
 
   #courseMenu div {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(25, 25, 92);
   }
   
@@ -67,7 +67,8 @@ body {
     text-decoration:none;
     background-color:#fff;
     color:rgb(149, 187, 187);
-    height: 50px;
+    height: 25px;
+    cursor: pointer;
   }
   
   #courseMenu a:hover {

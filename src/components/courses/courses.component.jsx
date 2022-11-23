@@ -4,7 +4,6 @@ import Output from "./output.component";
 import { projectFirestore } from "../../firebase/config";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 const Courses = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [pending, setPending] = useState(false);
@@ -17,6 +16,7 @@ const Courses = ({ id }) => {
 		setCourseId(id);
 		setType(type);
 		setVideo(video);
+		category = {category}; 
 	};
 	useEffect(() => {
 		setPending(true);
@@ -42,9 +42,9 @@ const Courses = ({ id }) => {
 				setPending(false);
 			});
 	}, [courseId, category]);
-
 	return (
-		<div>
+		<html>
+		<div style="height: 150px; overflow: auto">
 			<header>
 				<h2>{category} Learning Resources</h2>
 			</header>
@@ -84,7 +84,9 @@ const Courses = ({ id }) => {
 				</article>
 			</section>
 		</div>
+		</html>
 	);
 };
+
 
 export default Courses;
