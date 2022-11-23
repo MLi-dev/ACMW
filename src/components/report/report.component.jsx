@@ -90,6 +90,7 @@ const Report = ({ id }) => {
 				<article>
 					{data.length === 0 && <div>No Grade available!</div>}
 					{pending && <div>Loading!</div>}
+					<div className="table-container">
 					<table>
 						<div class='table-header-group ...'>
 							<div class='table-row'>
@@ -113,7 +114,7 @@ const Report = ({ id }) => {
 										<div class='table-row'>
 											<div class='table-cell ...'>{item.Level} </div>
 											<div class='table-cell ...'>{item.Name}</div>
-											<div class='table-cell ...'>{item.Score}</div>
+											<div class='table-cell ...'>{item.Score/10}</div>
 											<div class='table-cell ...'>{quizDate}</div>
 										</div>
 									</div>
@@ -121,12 +122,14 @@ const Report = ({ id }) => {
 						})}
 						<div class='table-header-group ...'>
 							<div class='table-row'>
-								<div class='table-cell ...'>Highest Score: {max} </div>
-								<div class='table-cell ...'>Lowest Score: {min} </div>
-								<div class='table-cell ...'>Average: {average} </div>
+								<div class='table-cell ...'>Highest Score: {max/10} </div>
+								<div class='table-cell ...'>Lowest Score: {min/10} </div>
+								<div class='table-cell ...'>Average: {average/10} </div>
+								<div class = 'table-cell ...'>Quiz Attempts: {data.length}</div>
 							</div>
 						</div>
 						</table>
+						</div>
 				</article>
 			</section>
 		</div>
