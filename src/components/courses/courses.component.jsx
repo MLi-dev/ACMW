@@ -43,8 +43,7 @@ const Courses = ({ id }) => {
 			});
 	}, [courseId, category]);
 	return (
-		<html>
-		<div style="height: 150px; overflow: auto">
+		<div>
 			<header>
 				<h2>{category} Learning Resources</h2>
 			</header>
@@ -84,7 +83,6 @@ const Courses = ({ id }) => {
 				</article>
 			</section>
 		</div>
-		</html>
 	);
 };
 
