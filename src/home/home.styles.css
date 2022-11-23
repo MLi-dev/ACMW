@@ -1,0 +1,10 @@
+.susi-container {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-align: right;
+    margin-right: 25px;
+}
+
+.susi-container  a {
+    color: white;
+}
