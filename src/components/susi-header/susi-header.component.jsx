@@ -8,16 +8,6 @@ const SusiHeader = () => {
 	const { user } = useAuthContext();
 	return (
 		<div className='susi-container'>
-			{!user && (
-				<>
-					<Link to={`/Login`}>
-						<h2>Log in</h2>
-					</Link>
-					<Link to={`/SignUp`}>
-						<h2>Sign up</h2>
-					</Link>
-				</>
-			)}
 			{user && (
 				<>
 					<div>  {user.displayName} </div>

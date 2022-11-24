@@ -5,6 +5,8 @@ import { projectFirestore } from "../../firebase/config";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SusiHeader from "../susi-header/susi-header.component";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Login from "../login/Login.js";
 const Courses = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [pending, setPending] = useState(false);
@@ -13,6 +15,7 @@ const Courses = ({ id }) => {
 	const [courseId, setCourseId] = useState(1);
 	const [type, setType] = useState("");
 	const [video, setVideo] = useState("");
+	const { user } = useAuthContext();
 	const onSubmitHandler = (id, type, category, video) => {
 		setCourseId(id);
 		setType(type);
@@ -46,6 +49,13 @@ const Courses = ({ id }) => {
 	return (
 		<div>
 			<SusiHeader />
+			{!user && (
+				<div className='login-modal-container'>
+					<div className='login-content-container'>
+						<Login />
+					</div>
+				</div>
+			)}
 			<header>
 				<h2>{category} Learning Resources</h2>
 			</header>
