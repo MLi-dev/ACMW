@@ -5,7 +5,7 @@ import SearchBox from "../components/search-box/search-box.component";
 import { categories as monsters } from "./categories";
 import { useLogout } from "../hooks/useLogout";
 import SusiHeader from "../components/susi-header/susi-header.component"
-import "./home.styles.css";
+
 const Home = () => {
 	const [searchField, setSearchField] = useState("");
 	const [filteredMonsters, setFilterMonsters] = useState(monsters);

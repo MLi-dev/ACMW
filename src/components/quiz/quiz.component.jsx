@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import Question from "../question/question.component";
 import axios from "axios";
 import { projectFirestore } from "../../firebase/config";
-import { addDoc } from "firebase/firestore";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Quiz = ({ category }) => {
 	let questionNumber = 0;
+	const { user } = useAuthContext();
 	const [questionList, setQuestionList] = useState([]);
 	const [current, setCurrent] = useState(1);
 	const [score, setScore] = useState(0);
@@ -22,7 +23,7 @@ const Quiz = ({ category }) => {
 			Name: category,
 			Score: score,
 			Time: Date.now(),
-			UserID: "myli2003",
+			UserID: user.email,
 			Level: level,
 		};
 		const ref = projectFirestore.collection("QuizResults");

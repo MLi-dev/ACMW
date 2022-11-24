@@ -4,12 +4,12 @@
     display: flex;
     justify-content: right;
     margin-right: 25px;
-    cursor: pointer;
 }
 
 .susi-container  a {
     color: white;
     margin-right: 10px;
+    cursor: pointer;
 }
 .susi-container button {
     font-family: Arial, Helvetica, sans-serif;
@@ -22,4 +22,12 @@
     border-color: white;
     cursor: pointer;
 }
-
+.susi-container div {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2px;
+    background-color: transparent;
+    margin-right: 10px;
+    color: rgb(162, 250, 0);
+    width: 110px;
+    font-size: 22px;
+}
