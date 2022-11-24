@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SusiHeader from '../susi-header/susi-header.component'
 
 // styles
 import styles from './Login.module.css'
@@ -13,6 +14,8 @@ export default function Login() {
   }
 
   return (
+    <div>
+    <SusiHeader/>
     <form onSubmit={handleSubmit} className={styles['login-form']}>
       <h2>login</h2>
       <label>
@@ -33,5 +36,6 @@ export default function Login() {
       </label>
       <button className="btn">Login</button>
     </form>
+    </div>
   )
 }

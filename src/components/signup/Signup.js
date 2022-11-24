@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import {useSignup} from '../../hooks/useSignup'
+import SusiHeader from '../susi-header/susi-header.component'
 // styles
 import styles from './Signup.module.css'
 
@@ -15,6 +16,8 @@ export default function Signup() {
   }
 
   return (
+    <div>
+    <SusiHeader/>
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
       <h2>sign up</h2>
       <label>
@@ -45,5 +48,6 @@ export default function Signup() {
       {isPending && <button className = "btn">loading</button>}
       {error && <p>{error}</p>}
     </form>
+    </div>
   )
 }

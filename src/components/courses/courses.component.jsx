@@ -4,6 +4,7 @@ import Output from "./output.component";
 import { projectFirestore } from "../../firebase/config";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import SusiHeader from "../susi-header/susi-header.component";
 const Courses = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [pending, setPending] = useState(false);
@@ -16,7 +17,7 @@ const Courses = ({ id }) => {
 		setCourseId(id);
 		setType(type);
 		setVideo(video);
-		category = {category}; 
+		category = { category };
 	};
 	useEffect(() => {
 		setPending(true);
@@ -44,12 +45,13 @@ const Courses = ({ id }) => {
 	}, [courseId, category]);
 	return (
 		<div>
+			<SusiHeader />
 			<header>
 				<h2>{category} Learning Resources</h2>
 			</header>
 			<section>
 				<nav>
-					<ul id="courseMenu">
+					<ul id='courseMenu'>
 						{error && <div>No Courses/Video available!</div>}
 						{pending && <div>Loading!</div>}
 						{!pending &&
@@ -85,6 +87,5 @@ const Courses = ({ id }) => {
 		</div>
 	);
 };
-
 
 export default Courses;
