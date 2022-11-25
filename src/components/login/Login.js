@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SusiHeader from "../susi-header/susi-header.component";
 import { useLogin } from "../../hooks/useLogin";
-
+import { Link } from "react-router-dom";
 // styles
 import styles from "./Login.module.css";
 
@@ -35,12 +35,17 @@ export default function Login() {
 						value={password}
 					/>
 				</label>
-				{!isPending && <button className='btn'>Login</button>}
-				{isPending && (
-					<button className='btn' disabled>
-						loading
-					</button>
-				)}
+				<div className='footer-container'>
+					<Link to={`/SignUp`}>
+						<h2>Sign up</h2>
+					</Link>
+					{!isPending && <button className='btn'>Login</button>}
+					{isPending && (
+						<button className='btn' disabled>
+							loading
+						</button>
+					)}
+				</div>
 				{error && <p>{error}</p>}
 			</form>
 		</div>
