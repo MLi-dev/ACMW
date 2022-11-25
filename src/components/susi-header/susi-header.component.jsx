@@ -11,9 +11,6 @@ const SusiHeader = () => {
 			{user && (
 				<>
 					<div>  {user.displayName} </div>
-					<button className='btn' onClick={logout}>
-						Logout
-					</button>
 				</>
 			)}
 		</div>

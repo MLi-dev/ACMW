@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import SusiHeader from "../susi-header/susi-header.component";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Login from "../login/Login.js";
+import { Link } from "react-router-dom";
 const Courses = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [pending, setPending] = useState(false);
@@ -64,6 +65,11 @@ const Courses = ({ id }) => {
 					<ul id='courseMenu'>
 						{error && <div>No Courses/Video available!</div>}
 						{pending && <div>Loading!</div>}
+						<li>
+							<Link to='/'>
+								<div>Go to dashboard</div>
+							</Link>
+						</li>
 						{!pending &&
 							data.map((item) => (
 								<li>
