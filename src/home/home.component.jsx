@@ -25,6 +25,7 @@ const Home = () => {
 
 	return (
 		<div className='App'>
+			<SusiHeader />
 			<h1 className='app-title'>ACMW Learning Resources</h1>
 			<SearchBox
 				className='monsters-search-box'
