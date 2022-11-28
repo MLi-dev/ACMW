@@ -62,6 +62,7 @@ const Courses = ({ id }) => {
 			</header>
 			<section>
 				<nav>
+				<div className='courses-container'>
 					<ul id='courseMenu'>
 						{error && <div>No Courses/Video available!</div>}
 						{pending && <div>Loading!</div>}
@@ -95,6 +96,7 @@ const Courses = ({ id }) => {
 							</a>
 						</li>
 					</ul>
+					</div>
 				</nav>
 				<article>
 					<Output id={courseId} type={type} category={category} video={video} />

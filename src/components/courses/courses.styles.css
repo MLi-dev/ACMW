@@ -40,7 +40,11 @@ body {
     clear: both;
   }
   
-
+  .courses-container {
+    width: 65%;
+    height: 400px;
+    overflow: auto;
+  }
 
   #courseMenu {
     margin:10px 50px 10px 50px;

@@ -5,13 +5,15 @@ import React, { useEffect } from "react";
 import { categories } from "../../home/categories.js";
 import SusiHeader from "../susi-header/susi-header.component";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Report = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [scoreArray, setScoreArray] = useState([]);
 	const [pending, setPending] = useState(false);
 	const [error, setError] = useState(false);
-	const [category, setCategory] = useState("");
+	const [category, setCategory] = useState("");	
+	const {user} = useAuthContext(); 
 	let index = 1;
 	let average = 0;
 	let max = 0;
@@ -52,6 +54,7 @@ const Report = ({ id }) => {
 		projectFirestore
 			.collection("QuizResults")
 			.where("Name", "==", category)
+			.where("UserID", "==", user.email)
 			.get()
 			.then((snapshot) => {
 				if (snapshot.empty) {
