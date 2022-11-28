@@ -10,7 +10,10 @@ const SusiHeader = () => {
 		<div className='susi-container'>
 			{user && (
 				<>
-					<div>  {user.displayName} </div>
+					<div> {user.displayName} </div>
+					<button className='btn' onClick={logout}>
+						Logout
+					</button>
 				</>
 			)}
 		</div>

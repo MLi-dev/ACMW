@@ -62,40 +62,40 @@ const Courses = ({ id }) => {
 			</header>
 			<section>
 				<nav>
-				<div className='courses-container'>
-					<ul id='courseMenu'>
-						{error && <div>No Courses/Video available!</div>}
-						{pending && <div>Loading!</div>}
-						<li>
-							<Link to='/'>
-								<div>Go to dashboard</div>
-							</Link>
-						</li>
-						{!pending &&
-							data.map((item) => (
-								<li>
-									<a
-										href
-										key={item.id}
-										onClick={() =>
-											onSubmitHandler(
-												`${item.id}`,
-												"Youtube",
-												`${item.category}`,
-												`https://www.youtube.com/embed/${item.video}`
-											)
-										}
-									>
-										<div>{item.title}</div>
-									</a>
-								</li>
-							))}
-						<li>
-							<a href onClick={() => onSubmitHandler(1, "Quiz", "Linux")}>
-								<div>Quiz</div>
-							</a>
-						</li>
-					</ul>
+					<div className='courses-container'>
+						<ul id='courseMenu'>
+							{error && <div>No Courses/Video available!</div>}
+							{pending && <div>Loading!</div>}
+							<li>
+								<Link to='/'>
+									<div>Go to dashboard</div>
+								</Link>
+							</li>
+							{!pending &&
+								data.map((item) => (
+									<li>
+										<a
+											href
+											key={item.id}
+											onClick={() =>
+												onSubmitHandler(
+													`${item.id}`,
+													"Youtube",
+													`${item.category}`,
+													`https://www.youtube.com/embed/${item.video}`
+												)
+											}
+										>
+											<div>{item.title}</div>
+										</a>
+									</li>
+								))}
+							<li>
+								<a href onClick={() => onSubmitHandler(1, "Quiz", "Linux")}>
+									<div>Quiz</div>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</nav>
 				<article>

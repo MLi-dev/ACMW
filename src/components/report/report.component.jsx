@@ -6,14 +6,15 @@ import { categories } from "../../home/categories.js";
 import SusiHeader from "../susi-header/susi-header.component";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import Login from "../login/Login.js";
 
 const Report = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [scoreArray, setScoreArray] = useState([]);
 	const [pending, setPending] = useState(false);
 	const [error, setError] = useState(false);
-	const [category, setCategory] = useState("");	
-	const {user} = useAuthContext(); 
+	const [category, setCategory] = useState("");
+	const { user } = useAuthContext();
 	let index = 1;
 	let average = 0;
 	let max = 0;
@@ -78,6 +79,13 @@ const Report = ({ id }) => {
 	return (
 		<div>
 			<SusiHeader />
+			{!user && (
+				<div className='login-modal-container'>
+					<div className='login-content-container'>
+						<Login />
+					</div>
+				</div>
+			)}
 			<header>
 				<h2>Your Learning Report</h2>
 			</header>
@@ -126,7 +134,7 @@ const Report = ({ id }) => {
 											<div class='table-row'>
 												<div class='table-cell ...'>{item.Level} </div>
 												<div class='table-cell ...'>{item.Name}</div>
-												<div class='table-cell ...'>{item.Score*10}%</div>
+												<div class='table-cell ...'>{item.Score * 10}%</div>
 												<div class='table-cell ...'>{quizDate}</div>
 											</div>
 										</div>
@@ -135,9 +143,9 @@ const Report = ({ id }) => {
 							})}
 							<div class='table-header-group ...'>
 								<div class='table-row'>
-									<div class='table-cell ...'>Highest Score: {max*10}% </div>
-									<div class='table-cell ...'>Lowest Score: {min*10}% </div>
-									<div class='table-cell ...'>Average: {average*10}%</div>
+									<div class='table-cell ...'>Highest Score: {max * 10}% </div>
+									<div class='table-cell ...'>Lowest Score: {min * 10}% </div>
+									<div class='table-cell ...'>Average: {average * 10}%</div>
 									<div class='table-cell ...'>Quiz Attempts: {data.length}</div>
 								</div>
 							</div>
