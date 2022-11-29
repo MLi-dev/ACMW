@@ -37,7 +37,7 @@ export default function Login() {
 				</label>
 				<div className='footer-container'>
 					<Link to={`/SignUp`}>
-						<h2>Sign up</h2>
+						<button className='btn'>Sign up</button>
 					</Link>
 					{!isPending && <button className='btn'>Login</button>}
 					{isPending && (
