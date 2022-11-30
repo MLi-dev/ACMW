@@ -97,13 +97,23 @@ const Report = ({ id }) => {
 								<div>Go to dashboard</div>
 							</Link>
 						</li>
-						{categories.map((item) => (
-							<li>
-								<a href key='1' onClick={() => onSubmitHandler(`${item.name}`)}>
-									<div>{item.name}</div>
-								</a>
-							</li>
-						))}
+						{categories.map((item) => {
+							if (item.name !== "MyReport") {
+								return (
+									<li>
+										<a
+											href
+											key='1'
+											onClick={() => onSubmitHandler(`${item.name}`)}
+										>
+											<div>{item.name}</div>
+										</a>
+									</li>
+								);
+							} else {
+								return null;
+							}
+						})}
 					</ul>
 				</nav>
 				<article>

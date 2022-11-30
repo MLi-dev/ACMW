@@ -30,7 +30,7 @@ const Home = () => {
 			<SearchBox
 				className='monsters-search-box'
 				onChangeHandler={onSearchChange}
-				placeholder='search monsters'
+				placeholder='Search courses'
 			/>
 			<CardList monsters={filteredMonsters} />
 		</div>
