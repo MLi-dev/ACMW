@@ -39,12 +39,27 @@ function writeToDoc() {
         });
 }
 
-//writeToDoc();
-/////////////////////////
+//read quiz results with specific email
+async function queryForDocs() {
+    const memberQuery = query(
+        collection(firestore, 'QuizResults'),
+        where('UserID','==','anguyen4@scu.edu'),
+    );
+    
+    const querySnapshot = await getDocs(memberQuery);
+    querySnapshot.forEach((snap) => {
+        console.log(`Documents ${snap.id} contains ${JSON.stringify(snap.data())}`)
+    }); 
+}
+
+console.log('Hello, firestore');
+writeToDoc();
+
+////////////////////////////////////////////////////
 
 //const quizCollection = collection(firestore,'')
 
-// //read a single doc
+// //read a single document
 // async function readASingleDoc() {
 //     const mySnapshot = await getDocs(newCollection);
 //     if (mySnapshot.exists()) {
@@ -53,19 +68,3 @@ function writeToDoc() {
 //     }
 // }
 // readASingleDoc();
-
-// async function queryForDocs() {
-//     const memberQuery = query(
-//         collection(firestore, 'QuizResults'),
-//         where('UserID','==','anguyen4@scu.edu'),
-//     );
-    
-//     const querySnapshot = await getDocs(memberQuery);
-//     querySnapshot.forEach((snap) => {
-//         console.log(`Documents ${snap.id} contains ${JSON.stringify(snap.data())}`)
-//     }); 
-// }
-
-// const specialOfTheDay = doc(firestore, '')
-console.log('Hello, firestore');
-writeToDoc();
