@@ -40,9 +40,16 @@ export const categories = [
 		name: "DevOps",
 		description: "DevOps class here",
 		img: "https://img-b.udemycdn.com/course/240x135/4039556_ebb3_3.jpg",
-	},
+	}, 
 	{
 		id: 8,
+		name: "ACMW",
+		description: "ACMW class here",
+		img: "https://img-c.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
+
+	},
+	{
+		id: 9,
 		name: "MyReport",
 		description: "View your performance (grades, usage) in other classes here",
 		img: "https://img-b.udemycdn.com/course/240x135/3148846_5626.jpg",

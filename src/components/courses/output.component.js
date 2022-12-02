@@ -2,7 +2,7 @@ import "./courses.styles.css";
 import "./output.styles.css";
 import Quiz from "../quiz/quiz.component";
 
-const Output = ({ id, type, category, video }) => {
+const Output = ({ id, type, category, url }) => {
 	if (type === "Youtube") {
 		return (
 			<div id='courseDisplayContainer'>
@@ -10,13 +10,27 @@ const Output = ({ id, type, category, video }) => {
 					title='Example'
 					width='700'
 					height='700'
-					src={video}
+					src={url}
 					frameborder='0'
 					allowfullscreen
 				></iframe>
 			</div>
 		);
-	} else if (type === "Quiz") {
+	} else if (type === "Slides") {
+		return (
+			<div id='courseDisplayContainer'>
+				<iframe
+					title='Example'
+					width='1000'
+					height='700'
+					src={url}
+					frameborder='0'
+					allowfullscreen
+				></iframe>
+			</div>
+		);
+	} 	
+	else if (type === "Quiz") {
 		return (
 			<div id='courseDisplayContainer'>
 				<Quiz category={category} />

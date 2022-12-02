@@ -15,14 +15,35 @@ const Courses = ({ id }) => {
 	const { category } = useParams();
 	const [courseId, setCourseId] = useState(1);
 	const [type, setType] = useState("");
-	const [video, setVideo] = useState("");
+	const [url, setUrl] = useState("");
 	const { user } = useAuthContext();
-	const onSubmitHandler = (id, type, category, video) => {
+	const onSubmitHandler = (id, type, category, url) => {
 		setCourseId(id);
 		setType(type);
-		setVideo(video);
+		setUrl(url);
 		category = { category };
 	};
+	const checkMedia = (media) => {
+		switch (media) {
+			case "video":
+				return "Youtube";
+			case "presentation":
+				return "Slides";
+			default:
+				return media;
+		}
+	};
+	const mediaArticle = (media, url) => {
+		switch (media) {
+			case "video":
+				return `https://www.youtube.com/embed/${url}`;
+			case "presentation":
+				return `https://docs.google.com/presentation/${url}`; 
+			default:
+				return media;
+		}
+	};
+
 	useEffect(() => {
 		setPending(true);
 		projectFirestore
@@ -62,42 +83,44 @@ const Courses = ({ id }) => {
 			</header>
 			<section>
 				<nav>
-						<ul id='courseMenu'>
-							{error && <div>No Courses/Video available!</div>}
-							{pending && <div>Loading!</div>}
-							<li>
-								<Link to='/'>
-									<div>Go to dashboard</div>
-								</Link>
-							</li>
-							{!pending &&
-								data.map((item) => (
-									<li>
-										<a
-											href
-											key={item.id}
-											onClick={() =>
-												onSubmitHandler(
-													`${item.id}`,
-													"Youtube",
-													`${item.category}`,
-													`https://www.youtube.com/embed/${item.video}`
-												)
-											}
-										>
-											<div>{item.title}</div>
-										</a>
-									</li>
-								))}
-							<li>
-								<a href onClick={() => onSubmitHandler(1, "Quiz", "Linux")}>
-									<div>Quiz</div>
-								</a>
-							</li>
-						</ul>
+					<ul id='courseMenu'>
+						{error && <div>No Courses/Video available!</div>}
+						{pending && <div>Loading!</div>}
+						<li>
+							<Link to='/'>
+								<div>Go to dashboard</div>
+							</Link>
+						</li>
+						{!pending &&
+							data.map((item) => (
+								<li>
+									<a
+										href
+										key={item.id}
+										onClick={() =>
+											onSubmitHandler(
+												`${item.id}`,
+												checkMedia(item.media),
+												`${item.category}`,
+												mediaArticle(item.media, item.url),
+											)
+										}
+									>
+										<div>{item.title}</div>
+									</a>
+								</li>
+							))}
+					 {category !== "ACMW" &&	
+						<li>
+							<a href onClick={() => onSubmitHandler(1, "Quiz", { category })}>
+								<div>Quiz</div>
+							</a>
+						</li>
+						}
+					</ul>
 				</nav>
 				<article>
-					<Output id={courseId} type={type} category={category} video={video} />
+					<Output id={courseId} type={type} category={category} url={url} />
 				</article>
 			</section>
 		</div>
