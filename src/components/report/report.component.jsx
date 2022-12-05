@@ -98,7 +98,7 @@ const Report = ({ id }) => {
 							</Link>
 						</li>
 						{categories.map((item) => {
-							if (item.name !== "MyReport") {
+							if (item.name !== "MyReport" && item.name !== "ACMW" && item.name !== "Job Help") {
 								return (
 									<li>
 										<a
@@ -117,8 +117,9 @@ const Report = ({ id }) => {
 					</ul>
 				</nav>
 				<article>
-					{data.length === 0 && <div>No Grade available!</div>}
+					{data.length === 0 && category !== "Job Help" && <div>No Grade available!</div>}
 					{pending && <div>Loading!</div>}
+					{category !== "Job Help" &&
 					<div className='table-container'>
 						<table>
 							<div class='table-header-group ...'>
@@ -135,10 +136,10 @@ const Report = ({ id }) => {
 									dateFormat.getMonth() + 1
 								}/${dateFormat.getDate()}/${dateFormat.getFullYear()}`;
 								scoreArray.push(item.Score);
+								average = getAvg(data)
+								max = getMax(data)
+								min = getMin(data)
 								return (
-									(average = getAvg(data)),
-									(max = getMax(data)),
-									(min = getMin(data)),
 									(
 										<div class='table-row-group'>
 											<div class='table-row'>
@@ -161,6 +162,7 @@ const Report = ({ id }) => {
 							</div>
 						</table>
 					</div>
+				}
 				</article>
 			</section>
 		</div>

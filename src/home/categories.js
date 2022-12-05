@@ -54,4 +54,10 @@ export const categories = [
 		description: "View your performance (grades, usage) in other classes here",
 		img: "https://img-b.udemycdn.com/course/240x135/3148846_5626.jpg",
 	},
+	{
+		id: 10, 
+		name: "Job Help", 
+		description: "We recommend you these jobs",
+		img: "https://img-b.udemycdn.com/course/240x135/3148846_5626.jpg",
+	}
 ];
