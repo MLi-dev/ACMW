@@ -82,9 +82,6 @@ const JobHelp = ({ id }) => {
 					</ul>
 				</nav>
 				<article>
-					{data.length === 0 && category !== "Job Help" && (
-						<div>No Grade available!</div>
-					)}
 					{pending && <div>Loading!</div>}
 					{ <iframe title = "Example" width="800" height="700" src={`https://www.simplyhired.com/jobs?q=${description}`} frameborder="0" ></iframe>}
 				</article>
