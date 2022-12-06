@@ -83,7 +83,7 @@ const JobHelp = ({ id }) => {
 				</nav>
 				<article>
 					{pending && <div>Loading!</div>}
-					{ <iframe title = "Example" width="800" height="700" src={`https://www.simplyhired.com/jobs?q=${description}`} frameborder="0" ></iframe>}
+					{ <iframe title = "Example" width="620" height="700" src={`https://www.simplyhired.com/jobs?q=${description}`} frameborder="0" ></iframe>}
 				</article>
 			</section>
 		</div>
