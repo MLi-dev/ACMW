@@ -1,6 +1,7 @@
 import "./courses.styles.css";
 import "./output.styles.css";
 import Quiz from "../quiz/quiz.component";
+import {Link} from 'react-router-dom';
 
 const Output = ({ id, type, category, url }) => {
 	if (type === "Youtube") {
@@ -28,6 +29,11 @@ const Output = ({ id, type, category, url }) => {
 					allowfullscreen
 				></iframe>
 			</div>
+		);
+	} 	
+	else if (type === "Link") {
+		return (
+			<div>{url}</div>
 		);
 	} 	
 	else if (type === "Quiz") {

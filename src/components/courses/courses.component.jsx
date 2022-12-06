@@ -29,6 +29,8 @@ const Courses = ({ id }) => {
 				return "Youtube";
 			case "presentation":
 				return "Slides";
+			case "Link":
+				return "Link";
 			default:
 				return media;
 		}
@@ -39,6 +41,8 @@ const Courses = ({ id }) => {
 				return `https://www.youtube.com/embed/${url}`;
 			case "presentation":
 				return `https://docs.google.com/presentation/${url}`; 
+			case "Link":
+				return `${url}`; 
 			default:
 				return media;
 		}
