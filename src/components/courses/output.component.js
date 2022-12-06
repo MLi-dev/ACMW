@@ -21,7 +21,7 @@ const Output = ({ id, type, category, url }) => {
 			<div id='courseDisplayContainer'>
 				<iframe
 					title='Example'
-					width='1000'
+					width='650'
 					height='700'
 					src={url}
 					frameborder='0'
