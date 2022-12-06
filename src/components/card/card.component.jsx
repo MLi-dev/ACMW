@@ -26,6 +26,7 @@ const Card = ({ monster }) => {
 						setCategory(results[results.length - 1].Name);
 					} else {
 						console.log("No results");
+						setCategory("Code");
 					}
 				})
 				.catch((err) => {

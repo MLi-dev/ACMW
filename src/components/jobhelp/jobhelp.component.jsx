@@ -56,9 +56,9 @@ const JobHelp = ({ id }) => {
 				</div>
 			)}
 			<header>
-				<h2>Job Recommendations</h2>
+                <h10>You scored the highest in the {category} course. Good job! Here are some recommended jobs:</h10>
 			</header>
-			<section>
+            <section>
 				<nav>
 					<ul id='reportMenu'>
 						<li>
@@ -72,7 +72,7 @@ const JobHelp = ({ id }) => {
 									<a
 										href
 										key='1'
-										onClick={() => onSubmitHandler(`${item.description}`)}
+										onClick={() => onSubmitHandler(`${item.name}`)}
 									>
 										<div>{item.name}</div>
 									</a>
@@ -86,7 +86,7 @@ const JobHelp = ({ id }) => {
 						<div>No Grade available!</div>
 					)}
 					{pending && <div>Loading!</div>}
-					{category !== "Job Help" && <div>{description}</div>}
+					{ <iframe title = "Example" width="800" height="700" src={`https://www.simplyhired.com/jobs?q=${description}`} frameborder="0" ></iframe>}
 				</article>
 			</section>
 		</div>
