@@ -1,0 +1,39 @@
+.login-form {
+  color: white;
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 20px;
+}
+.login-form label {
+  display: block;
+  margin: 30px auto;
+}
+.login-form span {
+  display: block;
+  margin-bottom: 6px;
+}
+.login-form input {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: #777;
+  width: 100%;
+}
+.login-form button {
+  font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    margin-right: 10px;
+    width: 100px;
+    font-size: 22px;
+    color: white;
+    /* border: 5px; */
+    border-color: white;
+    cursor: pointer;
+}
+.login-form div {
+  display:flex; 
+}
+.login-form div a{
+  font-size: 10px;
+  margin-top: 10px;
+  margin-right: 50px;
+}

@@ -32,6 +32,8 @@ body {
     background-color:#95dada;;
     height: 750px; /* only for demonstration, should be removed */
   }
+
+
   
   /* Clear floats after the columns */
   section::after {
@@ -39,14 +41,74 @@ body {
     display: table;
     clear: both;
   }
-  
 
-  #courseMenu {
+  .my-custom-scrollbar {
+    position: relative;
+    height: 10px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+
+
+  .block {
+    display: block; 
+  }
+  .inline-block {
+    display: inline-block;
+   
+  }
+  .inline{
+    display: inline;
+
+  }
+  .flex	{
+    display: flex;
+  }
+  .inline-flex	{
+    display: inline-flex;
+  }
+  .table-container {
+    width: 70%; 
+    height: 600px;
+    overflow: auto;
+  }
+  table	{
+    display: table;
+    border: 1; 
+    width: 98%;
+  }
+  .inline-table {
+    display: inline-table;
+  }
+  .table-cell	{
+    display: table-cell;
+    color: white;
+    font-size: 20px;
+  }
+  .table-header-group	{
+    display: table-header-group;
+    text-align: center;
+    background-color:rgb(25, 25, 92);
+    color: white;
+    cursor: pointer;
+    
+  }
+  .table-row-group	{
+    display: table-row-group;
+    background-color: teal;
+  }
+  .table-row	{
+    display: table-row;
+  }
+  
+  #reportMenu {
     margin:10px 50px 10px 50px;
     width:400px;
     font-family: sans-serif;
   }
-  #courseMenu li {
+  #reportMenu li {
     display:block;
     width:200px;
     float:left;
@@ -54,23 +116,23 @@ body {
     border:1px solid #000;
   }
 
-  #courseMenu div {
+  #reportMenu div {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     color: rgb(25, 25, 92);
   }
   
-  #courseMenu a {
+  #reportMenu a {
     display:block;
     padding:3px;
     text-decoration:none;
     background-color:#fff;
     color:rgb(149, 187, 187);
-    height: 25px;
+    height: 50px;
     cursor: pointer;
   }
   
-  #courseMenu a:hover {
+  #reportMenu a:hover {
     background:rgb(149, 187, 187);
     color:#fff;
   }
