@@ -58,6 +58,6 @@ export const categories = [
 		id: 10, 
 		name: "JobHelp", 
 		description: "We recommend you these jobs",
-		img: "https://img-b.udemycdn.com/course/240x135/3148846_5626.jpg",
+		img: "https://img-b.udemycdn.com/course/240x135/1378858_28e5_6.jpg",
 	}
 ];

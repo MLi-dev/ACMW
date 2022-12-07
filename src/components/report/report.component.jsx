@@ -98,7 +98,7 @@ const Report = ({ id }) => {
 							</Link>
 						</li>
 						{categories.map((item) => {
-							if (item.name !== "MyReport" && item.name !== "ACMW" && item.name !== "Job Help") {
+							if (item.name !== "MyReport" && item.name !== "ACMW" && item.name !== "JobHelp") {
 								return (
 									<li>
 										<a
